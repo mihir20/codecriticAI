@@ -56,6 +56,7 @@ codecriticai --dir /path/to/repo
 
 # Compare with different base branch
 codecriticai --base develop
+```
 
 ## 🤝 Contributing
 
@@ -67,7 +68,6 @@ We love contributions! Here's how you can help:
 ```bash
 git clone https://github.com/mihir20/codecriticAI
 cd codecriticAI
-```
 
 2. Set up Python environment:
 
