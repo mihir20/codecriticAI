@@ -5,21 +5,27 @@ import openai
 import webbrowser
 from dotenv import load_dotenv
 
-from gitops.git_ops import GitOps
-from aireviewer.reviewer import Reviewer
-from reportgenerator.html_generator import HtmlReportGenerator
+from codecriticAI.gitops.git_ops import GitOps
+from codecriticAI.aireviewer.reviewer import Reviewer
+from codecriticAI.reportgenerator.html_generator import HtmlReportGenerator
 
 load_dotenv()
 
 def main():
     parser = argparse.ArgumentParser(description='AI Code Review using Git Diff')
-    parser.add_argument('--dir', type=str, required=True,
-                        help='Directory path to review')
+    parser.add_argument('--dir', type=str, required=False,
+                        help='Directory path to review, default is current directory')
     parser.add_argument('--base', type=str, required=False, default='main',
-                        help='Base branch name for comparison')
+                        help='Base branch name for comparison, default is main')
     args = parser.parse_args()
 
-    git_ops = GitOps(args.dir, args.base)
+    repo_dir = args.dir
+    if repo_dir is None:
+        repo_dir = os.getcwd()
+
+    base_branch = args.base
+
+    git_ops = GitOps(repo_dir, base_branch)
 
     diff_text = git_ops.get_git_diff()
 
@@ -32,7 +38,7 @@ def main():
         print("ERROR: OPENAI_API_KEY environment variable not found")
         return
 
-    print(f"🔍 Analyzing changes in '{args.dir}' compared to '{args.base}'...\n")
+    print(f"🔍 Analyzing changes in '{repo_dir}' compared to '{base_branch}'...\n")
     reviewer = Reviewer(diff_text)
     review = reviewer.code_review_with_openai()
     print("📝 Code Review Results:\n")

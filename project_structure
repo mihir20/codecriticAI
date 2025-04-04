@@ -1,0 +1,17 @@
+CodeCriticAI/
+├── codecriticAI/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── gitops/
+│   │   ├── __init__.py
+│   │   └── git_ops.py
+│   ├── aireviewer/
+│   │   ├── __init__.py
+│   │   └── reviewer.py
+│   ├── reportgenerator/
+│   │   ├── __init__.py
+│   │   └── html_generator.py
+├── .gitignore
+├── LICENSE
+├── README.md
+└── setup.py
