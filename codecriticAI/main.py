@@ -6,6 +6,9 @@ import openai
 import webbrowser
 from pathlib import Path
 import markdown
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 def get_git_diff(base_branch, directory):
