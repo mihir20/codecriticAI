@@ -9,7 +9,7 @@ class GitOps:
     def get_git_diff(self) -> str:
         try:
             diff = subprocess.check_output(
-                ['git', 'diff', '-u', self.base_branch, '--', self.repo_path],
+                ['git', 'diff', self.base_branch, '--', self.repo_path],
                 stderr=subprocess.STDOUT
             )
             return diff.decode('utf-8')
