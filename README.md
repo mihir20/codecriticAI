@@ -5,7 +5,7 @@
 ### AI-Powered Code Review Tool
 
 [![PyPI version](https://img.shields.io/pypi/v/codecriticai)](https://pypi.org/project/codecriticai/)
-[![PyPI downloads](https://img.shields.io/pypi/dm/codecriticai)](https://pypi.org/project/codecriticai/)
+[![PyPI downloads](https://img.shields.io/pypi/dm/codecriticai)](https://pypistats.org/packages/codecriticai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
