@@ -19,6 +19,10 @@ CodeCriticAI is a tool for performing AI-powered code reviews using Git diffs. I
 - Utilizes OpenAI's API for code review
 - Generates HTML reports of the code review
 
+## TODOs
+- [ ] Add support for gemini as it has larger token window which will be helpful to review large prs
+- [ ] Add support to also add commit messages also in the prompt
+
 ## Requirements
 
 - Python 3.6+
